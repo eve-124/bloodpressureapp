@@ -66,33 +66,24 @@ for i in range(3):
         )
 
 if st.button("平均を計算"):
+
     if None in max_list or None in min_list or None in num_list:
         st.warning("すべて入力してください")
+
     else:
         st.markdown(
-    "<div style='text-align:center; font-size:16px; color:gray;'>平均</div>",
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    f"""
-    <div style='text-align:center; font-size:28px; font-weight:600;'>
-        最高：{sum(max_list) // 3}<br>
-        最低：{sum(min_list) // 3}<br>
-        脈拍：{sum(num_list) // 3}
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+            f"""
+            <div style='text-align:center;'>
+                <div style='font-size:14px; color:gray;'>平均</div>
+                <div style='font-size:32px; font-weight:600;'>最高：{sum(max_list)//3}</div>
+                <div style='font-size:32px; font-weight:600;'>最低：{sum(min_list)//3}</div>
+                <div style='font-size:32px; font-weight:600;'>脈拍：{sum(num_list)//3}</div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         
 st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
-
-
-
-
-
-
-
