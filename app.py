@@ -1,6 +1,18 @@
 import streamlit as st
 
 st.markdown(
+    """
+    <style>
+    input[type="number"] {
+        font-size: 22px;
+        height: 3em;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
     "<h2 style='font-size:28px; text-align:center;'>血圧・脈拍 平均計算</h2>",
     unsafe_allow_html=True
 )
@@ -60,5 +72,6 @@ st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
+
 
 
