@@ -1,6 +1,9 @@
 import streamlit as st
 
-st.title("血圧・脈拍 平均計算")
+st.markdown(
+    "<h2 style='font-size:28px; text-align:center;'>血圧・脈拍 平均計算</h2>",
+    unsafe_allow_html=True
+)
 
 max_list = []
 min_list = []
@@ -57,4 +60,5 @@ st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
+
 
