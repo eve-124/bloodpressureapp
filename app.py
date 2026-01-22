@@ -76,7 +76,7 @@ if st.button("平均を計算"):
 
 st.markdown(
     f"""
-    <div style='text-align:center; font-size:32px; font-weight:600;'>
+    <div style='text-align:center; font-size:28px; font-weight:600;'>
         最高：{sum(max_list) // 3}<br>
         最低：{sum(min_list) // 3}<br>
         脈拍：{sum(num_list) // 3}
@@ -89,6 +89,7 @@ st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
+
 
 
 
