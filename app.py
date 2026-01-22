@@ -22,7 +22,18 @@ min_list = []
 num_list = []
 
 for i in range(3):
-    st.subheader(f"{i+1}回目")
+    st.markdown(
+    f"""
+    <div style='
+        text-align:center;
+        font-weight:600;
+        margin:12px 0;
+    '>
+        {i+1}回目
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
 
     col1, col2, col3 = st.columns(3)
 
@@ -32,7 +43,7 @@ for i in range(3):
                 "最高",
                 min_value=50,
                 max_value=250,
-                value=120,
+                value=None,
                 step=1,
                 key=f"max{i}"
             )
@@ -44,7 +55,7 @@ for i in range(3):
                 "最低",
                 min_value=30,
                 max_value=150,
-                value=80,
+                value=None,
                 step=1,
                 key=f"min{i}"
             )
@@ -56,22 +67,26 @@ for i in range(3):
                 "脈拍",
                 min_value=30,
                 max_value=200,
-                value=70,
+                value=None,
                 step=1,
                 key=f"num{i}"
             )
         )
 
 if st.button("平均を計算"):
-    st.header("〔平均〕")
-    st.write(f"最高：{sum(max_list) // 3}")
-    st.write(f"最低：{sum(min_list) // 3}")
-    st.write(f"脈拍：{sum(num_list) // 3}")
+    if None in max_list or None in min_list or None in num_list:
+        st.warning("すべて入力してください")
+    else:
+        st.header("平均")
+        st.write(f"最高：{sum(max_list) // 3}")
+        st.write(f"最低：{sum(min_list) // 3}")
+        st.write(f"脈拍：{sum(num_list) // 3}")
 
 st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
+
 
 
 
