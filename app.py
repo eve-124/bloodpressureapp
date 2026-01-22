@@ -23,18 +23,10 @@ num_list = []
 
 for i in range(3):
     st.markdown(
-    f"""
-    <div style='
-        text-align:center;
-        font-weight:600;
-        margin:12px 0;
-    '>
-        {i+1}回目
-    </div>
-    """,
+    f"<h5 style='text-align:center;'>{i+1}回目</h5>",
     unsafe_allow_html=True
     )
-
+    
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -86,6 +78,7 @@ st.set_page_config(
     page_title="血圧計算",
     layout="centered"
 )
+
 
 
 
